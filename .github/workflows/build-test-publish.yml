@@ -31,7 +31,8 @@ jobs:
         restore-keys: ${{ runner.os }}-m2 
     
     - name: Build project with Maven
-      run: mvn -B package --file pom.xml
+      #run: mvn -B package --file pom.xml
+      run: mvn -B clean package --file pom.xml spring-boot:repackage
             
     - name: Upload hello-world-jar
       uses: actions/upload-artifact@v3
