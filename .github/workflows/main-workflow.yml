@@ -57,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: hello-world-jar
-          path: ./
+          path: hello-world-jar
 #          path: ${{ env.staging_folder }}
 
       #  Check out the sftp-to-remote action
@@ -68,5 +68,5 @@ jobs:
           remote_port: ${{ secrets.REMOTE_PORT  }}
           remote_ssh_key: ${{ secrets.REMOTE_SSH_KEY  }}
           #local_filepath: ./${{ env.staging_folder }}
-          local_filepath: ./*.jar
+          local_filepath: ./hello-world-jar
           remote_filepath: ${{ vars.REMOTE_FILEPATH  }}
