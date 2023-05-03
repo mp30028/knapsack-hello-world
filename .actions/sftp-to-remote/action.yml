@@ -17,7 +17,7 @@ inputs:
     local_filepath:
         description: 'Path of the files to be uploaded'
         required: true
-        default: ./hello-world-jar
+        default: ./*
     remote_filepath:
         description: 'Path for the files to be uploaded to'
         required: true

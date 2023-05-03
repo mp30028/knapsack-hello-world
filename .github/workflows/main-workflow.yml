@@ -50,8 +50,8 @@ jobs:
       # The repository name is in an env variable called $GITHUB_WORKSPACE which this action uses
       - uses: actions/checkout@v3
 
-#      - name: Make staging directory
-#        run: mkdir ./${{ env.staging_folder }}
+      - name: Make staging directory
+        run: mkdir ./hello-world-jar
 
       - name: Download the package
         uses: actions/download-artifact@v3
