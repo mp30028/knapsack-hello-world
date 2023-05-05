@@ -70,3 +70,20 @@ jobs:
           #local_filepath: ./${{ env.staging_folder }}
           local_filepath: ./hello-world-jar
           remote_filepath: ${{ vars.REMOTE_FILEPATH  }}
+          
+  start-application:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    needs: [build-test-package]
+
+    steps:
+      
+      #  Check out the sftp-folder-to-remote action
+      - uses: mp30028/knapsack-hello-world/.actions/execute-remote-command@main
+        with:
+          remote_username: ${{ secrets.REMOTE_USERNAME  }}
+          remote_host: ${{ secrets.REMOTE_SERVER  }}
+          remote_port: ${{ secrets.REMOTE_PORT  }}
+          remote_ssh_key: ${{ secrets.REMOTE_SSH_KEY  }}
+          #remote_cmd: nohup cd /installed-apps/persons-api; java -jar persons-api-with-workflow-0.0.1-SNAPSHOT.jar > logs.out 2> error.out < /dev/null &
+          remote_cmd: bash /installed-apps/hello-world-jar/force-start-container.sh jdk-17-hello-world
