@@ -74,7 +74,7 @@ jobs:
   start-application:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    needs: [build-test-package]
+    needs: [sftp-to-remote]
 
     steps:
       
