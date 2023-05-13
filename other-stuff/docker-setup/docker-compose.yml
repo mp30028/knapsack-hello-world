@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  test-db:
+    container_name: test-db
+    build: "."
+    image: test-db:0.1 
+    stdin_open: false
+    tty: false
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=R007*localhost
+    volumes:
+      - G:\dev\java-projects\test-db-data:/var/lib/mysql
+    networks:
+      - test-db-net
+
+
+  test-db-cli:
+    container_name: test-db-cli
+    image: "imega/mysql-client:latest"
+    stdin_open: true
+    tty: true
+    networks:
+      - test-db-net
+    depends_on:
+      - test-db
+    command:  mysql -u test-db-admin -pAdminPassword*009 --protocol=TCP --host=test-db --port=3306
+
+networks:
+  test-db-net:
