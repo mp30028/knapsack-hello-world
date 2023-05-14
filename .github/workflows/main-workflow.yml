@@ -32,13 +32,13 @@ jobs:
     
     - name: Build project with Maven
       #run: mvn -B package --file pom.xml
-      run: mvn -B clean package --file pom.xml spring-boot:repackage
+      run: mvn -B clean package --file hello-world/pom.xml spring-boot:repackage
             
     - name: Upload hello-world-jar
       uses: actions/upload-artifact@v3
       with:
         name: hello-world-jar
-        path: target/hello-world*.jar
+        path: hello-world/target/hello-world*.jar
 
   sftp-to-remote:
     if: github.event.pull_request.merged == true
