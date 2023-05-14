@@ -13,3 +13,5 @@ Reference repository to build and deploy a simple application using GitHub workf
 `docker run --rm -it -d --name=jdk-17-hello-world -v /installed-apps/hello-world-jar:/hello-world-app -p 80:80 -p 443:443 --env-file /installed-apps/hello-world-jar/env.list --entrypoint /hello-world-app/entrypoint.sh eclipse-temurin:17`
 
 5. NOTE: The ssl settings in application.properties file needs to be overridden with environment variables in order to use the certificates stored on the server. The environment variables are stored in the `env.list` file that is passed as an argument when the container is started.
+
+-trigger build
