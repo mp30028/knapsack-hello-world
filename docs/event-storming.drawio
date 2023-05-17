@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2023-05-16T05:29:32.023Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="XMuRv8MvjSSrxEbaCcH2" version="21.2.8" type="device">
+  <diagram name="Page-1" id="EEDCB2eksFTo1AQLWxVl">
+    <mxGraphModel dx="812" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rHV1BqbBRuV2htzgotiL-1" value="Simple Basic App Created" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=15;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-2" value="App tested, built and packaged" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=15;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-3" value="App deployed" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=15;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="470" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-4" value="App accessed via https" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=15;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-5" value="http access redirected to https" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=15;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-6" value="Access authenticated by keycloak" style="whiteSpace=wrap;aspect=fixed;fillColor=#FF9933;strokeColor=#FF8000;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Comic Sans MS;fontSize=11;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="470" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-7" value="" style="endArrow=oval;dashed=1;html=1;rounded=0;fontFamily=Shadows Into Light;fontSize=14;strokeColor=#999999;strokeWidth=2;endFill=1;exitX=0;exitY=1;exitDx=0;exitDy=0;fontColor=#000000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="320" as="sourcePoint" />
+            <mxPoint x="360" y="334" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rHV1BqbBRuV2htzgotiL-9" value="processing system" style="whiteSpace=wrap;aspect=fixed;fillColor=#F8CECC;strokeColor=#FF9999;sketch=1;shadow=0;rounded=0;sketchStyle=comic;fontFamily=Shadows Into Light;fontSize=18;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
