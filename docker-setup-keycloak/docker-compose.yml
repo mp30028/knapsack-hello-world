@@ -1,0 +1,51 @@
+version: "3.8"
+
+
+services:      
+  keycloak-db:
+    container_name: keycloak-db
+    build:
+      context: .
+      dockerfile: keycloak-db.Dockerfile      
+    image: keycloak-db:0.1 
+    stdin_open: false
+    tty: false
+    ports:
+      - 4406:3306
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=keycloakR007*
+      - MYSQL_DATABASE=keycloak_db
+      - MYSQL_USER=keycloak-db-user
+      - MYSQL_PASSWORD=SecretP^55word*9911
+    volumes:
+      - G:\dev\java-projects\keycloak-db-data:/var/lib/mysql
+    networks:
+      - keycloak-net
+
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:21.1.0      
+    networks:
+    - keycloak-net      
+    environment:
+      KC_DB: mysql
+      KC_DB_URL_HOST: keycloak-db
+      KC_DB_URL_DATABASE: keycloak_db
+      KC_DB_URL_PORT: 3306
+      KC_DB_USERNAME: keycloak-db-user
+      KC_DB_PASSWORD: SecretP^55word*9911
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: Pa55w0rd
+        # Uncomment the line below if you want to specify JDBC parameters. 
+        # The parameter below is just an example, and it shouldn't be used in production without knowledge. 
+        # It is highly recommended that you read the MySQL JDBC driver documentation in order to use it.
+        #JDBC_PARAMS: "connectTimeout=30000"
+    ports:
+      - 8080:8080
+    command: start-dev
+    depends_on:
+      - keycloak-db
+        
+networks:
+  keycloak-net:
