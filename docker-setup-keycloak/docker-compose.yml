@@ -22,12 +22,19 @@ services:
       - G:\dev\java-projects\keycloak-db-data:/var/lib/mysql
     networks:
       - keycloak-net
+    healthcheck:
+        #test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-pkeycloakR007*"]
+        test: "mysql $$MYSQL_DATABASE -u$$MYSQL_USER -p$$MYSQL_PASSWORD -e 'SELECT 1;'"
+        timeout: 20s
+        retries: 10
 
   keycloak:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:21.1.0      
     networks:
-    - keycloak-net      
+    - keycloak-net
+    volumes:
+      - .\certs:/srv/certs
     environment:
       KC_DB: mysql
       KC_DB_URL_HOST: keycloak-db
@@ -35,6 +42,9 @@ services:
       KC_DB_URL_PORT: 3306
       KC_DB_USERNAME: keycloak-db-user
       KC_DB_PASSWORD: SecretP^55word*9911
+      KC_HTTPS_CERTIFICATE_FILE: /srv/certs/cert.pem
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /srv/certs/key.pem
+      KC_HOSTNAME: localhost
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: Pa55w0rd
         # Uncomment the line below if you want to specify JDBC parameters. 
@@ -43,9 +53,12 @@ services:
         #JDBC_PARAMS: "connectTimeout=30000"
     ports:
       - 8080:8080
-    command: start-dev
+      - 8443:8443
+    command: start
     depends_on:
-      - keycloak-db
+      keycloak-db:
+        #condition: service_started
+        condition: service_healthy
         
 networks:
   keycloak-net:
