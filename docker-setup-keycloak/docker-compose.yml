@@ -1,6 +1,5 @@
 version: "3.8"
 
-
 services:      
   keycloak-db:
     container_name: keycloak-db
@@ -23,7 +22,6 @@ services:
     networks:
       - keycloak-net
     healthcheck:
-        #test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-pkeycloakR007*"]
         test: "mysql $$MYSQL_DATABASE -u$$MYSQL_USER -p$$MYSQL_PASSWORD -e 'SELECT 1;'"
         timeout: 20s
         retries: 10
@@ -42,8 +40,8 @@ services:
       KC_DB_URL_PORT: 3306
       KC_DB_USERNAME: keycloak-db-user
       KC_DB_PASSWORD: SecretP^55word*9911
-      KC_HTTPS_CERTIFICATE_FILE: /srv/certs/cert.pem
-      KC_HTTPS_CERTIFICATE_KEY_FILE: /srv/certs/key.pem
+      KC_HTTPS_CERTIFICATE_FILE: /srv/certs/localhost.crt
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /srv/certs/localhost.key
       KC_HOSTNAME: localhost
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: Pa55w0rd
