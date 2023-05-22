@@ -4,11 +4,11 @@ on:
 
  workflow_dispatch: 
 
- pull_request:
-    branches: [ main ]
-    types: [closed]
-    paths:
-      - "keycloak/**"
+# pull_request:
+#    branches: [ main ]
+#    types: [closed]
+#    paths:
+#      - "keycloak/**"
 
 jobs:
 #  build-test-package:
