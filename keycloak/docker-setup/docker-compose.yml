@@ -32,7 +32,7 @@ services:
     networks:
     - keycloak-net
     volumes:
-      - .\certs:/srv/certs
+      - .\certs-localhost:/srv/certs
     environment:
       KC_DB: mysql
       KC_DB_URL_HOST: keycloak-db
@@ -50,12 +50,10 @@ services:
         # It is highly recommended that you read the MySQL JDBC driver documentation in order to use it.
         #JDBC_PARAMS: "connectTimeout=30000"
     ports:
-      - 8080:8080
       - 8443:8443
     command: start
     depends_on:
       keycloak-db:
-        #condition: service_started
         condition: service_healthy
         
 networks:
