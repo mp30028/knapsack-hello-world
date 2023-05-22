@@ -1,4 +1,4 @@
-name: Main-Workflow
+name: Hello-World-Workflow
 
 on:
 
@@ -7,8 +7,8 @@ on:
  pull_request:
     branches: [ main ]
     types: [closed]
-#    paths:
-#      - "hello-world/**"
+    paths:
+      - "hello-world/**"
 
 jobs:
   build-test-package:
