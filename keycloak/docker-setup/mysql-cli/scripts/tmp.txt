@@ -1,0 +1,6 @@
+mysql -u root -p -e"set @temp=1;" < /home/mysql/Desktop/a.sql
+
+mysql -u root -pkeycloakR007* --host=keycloak-db -e"set @db_name=test-db-1;" < create-db.sql
+
+
+mysql -u root -pkeycloakR007* --host=keycloak-db 

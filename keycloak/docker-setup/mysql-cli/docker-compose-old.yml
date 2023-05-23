@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  keycloak-db-cli:
+    container_name: keycloak-db-cli
+    image: "imega/mysql-client:latest"
+    stdin_open: true
+    tty: true
+    networks:
+      - db-network    
+    environment:
+      - MYSQL_ROOT_PASSWORD=keycloakR007*
+    command:  mysql -u keycloak-db-user -pSecretP^55word*9911 --protocol=TCP --host=keycloak-db --port=3306
+    # command:  mysql -u keycloak-db-user -pSecretP^55word*9911 --protocol=TCP --host=keycloak-db --port=3306
+    #command:  mysql -u root -pkeycloakR007* --protocol=TCP --host=keycloak-db --port=4406
+
+#networks:
+#  keycloak-net:
+networks:
+ db-network:
+  name: docker-setup-keycloak_keycloak-net
+  external: true
