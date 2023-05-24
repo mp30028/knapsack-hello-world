@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  db-cli-os:
+    container_name: db-cli-os
+    build: "."
+    image: db-cli-os:0.1    
+    stdin_open: true
+    tty: true
+    networks:
+      - db-network
+    volumes:
+      - ./scripts:/scripts
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=keycloakR007*
+#    command:  mysql -u keycloak-db-user -pSecretP^55word*9911 --protocol=TCP --host=keycloak-db --port=3306
+    # command:  mysql -u keycloak-db-user -pSecretP^55word*9911 --protocol=TCP --host=keycloak-db --port=3306
+    #command:  mysql -u root -pkeycloakR007* --protocol=TCP --host=keycloak-db --port=4406
+
+#networks:
+#  keycloak-net:
+networks:
+ db-network:
+  name: docker-setup_keycloak-net
+  external: true
